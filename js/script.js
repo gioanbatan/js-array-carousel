@@ -20,5 +20,3 @@
 // 2. Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa vogliamo fare
 // 3. Al momento giusto (ihihhi starà a voi capire quale) rispondete a questa domanda: "Quanti cicli servono?"
 // Buon lavoro e buon divertimento! :faccia_leggermente_sorridente:
-
-alert();
