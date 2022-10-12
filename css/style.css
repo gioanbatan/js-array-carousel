@@ -61,7 +61,11 @@ html {
 
 .ms_thumb.ms_active {
     filter: brightness(1);
-    border: 2px solid #ffffff;
+    /* border: 2px solid #ffffff; */
+    animation-name: thumb-selected;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 .ms_thumb img {
@@ -127,3 +131,16 @@ img {
     bottom: 1rem;
 }
 
+@keyframes thumb-selected {
+    0% {
+        border: 2px solid #ffffff;
+    }
+
+    50% {
+        border: 2px solid #000000;
+    }
+
+    100% {
+        border: 2px solid #ffffff;
+    }
+}
