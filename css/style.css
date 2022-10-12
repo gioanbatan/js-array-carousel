@@ -25,6 +25,7 @@ html {
 
 .ms_carousel-container {
     position: absolute;
+    display: flex;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -37,15 +38,49 @@ html {
     box-shadow: 3px 3px 4px #00000030;
 }
 
+.ms_main-pic-container {
+    width: 80%;
+    height: 100%
+}
+
+.ms_thumbs-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 20%;
+    height: 100%;
+}
+
+.ms_thumb {
+    width: 100%;
+    height: calc(100% / 5);
+    filter: brightness(0.5);
+}
+
+.ms_thumb.ms_active {
+    filter: brightness(1);
+    border: 2px solid #ffffff;
+}
+
+.ms_thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .ms_btn {
     position: absolute;
     left: 50%;
+    transform: translate(-50%);
     
     width: 2rem;
     height: 2rem;
 
     color: #000000;
-    background-color: #ffffff;
+    background-color: #bbbbbb;
     opacity: 0.3;
 
     border-radius: 50%;
@@ -73,7 +108,7 @@ img {
     display: none;
 }
 
-.ms_carousel-container img {
+.ms_main-pic-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -85,9 +120,10 @@ img {
 }
 
 #prev-pic {
-    top: 3rem;
+    top: 1rem;
 }
 
 #next-pic {
-    bottom: 3rem;
+    bottom: 1rem;
 }
+

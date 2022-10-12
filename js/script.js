@@ -52,9 +52,14 @@ const nextPic = document.getElementById("next-pic");
 
 const pics = document.getElementsByClassName("ms_pic");
 
+// BONUS 2 Thumbnails
+const thumbs = document.getElementsByClassName("ms_thumb");
+
 let actualPic = 0;
 
-console.log("pics", pics, "actual", actualPic)
+thumbs[actualPic].classList.add("ms_active");
+
+console.log("pics", pics, "actual", actualPic, "thumbs", thumbs);
 
 // INPUT
 prevPic.addEventListener("click", function() {
@@ -63,6 +68,8 @@ prevPic.addEventListener("click", function() {
     // SE l'utente preme il bottone precedente
     // ALLORA all'immagine corrente viene tolta la classe active
     pics[actualPic].classList.remove("ms_active");
+    // BONUS 2 la thumbnail attuale si oscura
+    thumbs[actualPic].classList.remove("ms_active");
 
     // SE l'immagine corrente è la prima, immagine corrente diventa l'ultima
     if (actualPic < 1) {
@@ -76,6 +83,8 @@ prevPic.addEventListener("click", function() {
     // OUTPUT
     // l'immagine successiva viene aggiunta la classe active
     pics[actualPic].classList.add("ms_active");
+    // BONUS 2 la thumbnail attuale si attiva
+    thumbs[actualPic].classList.add("ms_active");
 })    
 
 // INPUT
@@ -85,6 +94,8 @@ nextPic.addEventListener("click", function() {
     // SE l'utente preme il bottone successivo
     // ALLORA all'immagine corrente viene tolta la classe active
     pics[actualPic].classList.remove("ms_active");
+    // BONUS 2 la thumbnail attuale si oscura
+    thumbs[actualPic].classList.remove("ms_active");
 
     // SE l'immagine corrente è l'ultima, l'immagine corrente diventa la prima
     if (actualPic >= imgArray.length - 1) {
@@ -98,5 +109,6 @@ nextPic.addEventListener("click", function() {
     // OUTPUT
     // l'immagine successiva viene aggiunta la classe active
     pics[actualPic].classList.add("ms_active");
-})    
-
+    // BONUS 2 la thumbnail attuale si oscura
+    thumbs[actualPic].classList.add("ms_active");
+})
