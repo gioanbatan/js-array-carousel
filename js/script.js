@@ -29,7 +29,7 @@ const imgArray = ["01.jpg","02.jpg","03.jpg","04.jpg","05.jpg"]
 const imgFileName = document.getElementById("img-container")
 console.log(imgArray, imgFileName);
 
-// INPUT
+
 
 // ELABORTAZIONE DATI
 // Ciclo for per la composizione del div con le immagini
@@ -39,12 +39,64 @@ for (let i = 0; i < imgArray.length; i++) {
     // OUTPUT
     // SE non è la prima immagine creare l'elemento img con il file immagine
     if (i !== 0) {
-        imgFileName.innerHTML += `<img src="img/${imgArrayPos}">`;
+        imgFileName.innerHTML += `<img class="ms_pic" src="img/${imgArrayPos}">`;
     } else {
         //SE è il primo file aggiungere la classe active per renderla visibile
-        imgFileName.innerHTML += `<img class="ms_active" src="img/${imgArrayPos}">`;
+        imgFileName.innerHTML += `<img class="ms_pic ms_active" src="img/${imgArrayPos}">`;
     }
 }
 
+// Bottoni Precedente e Prossimo
+const prevPic = document.getElementById("prev-pic");
+const nextPic = document.getElementById("next-pic");
 
+const pics = document.getElementsByClassName("ms_pic");
+
+let actualPic = 0;
+
+console.log("pics", pics, "actual", actualPic)
+
+// INPUT
+prevPic.addEventListener("click", function() {
+    console.log("prevPic");
+    // ELABORAZIONE DATI
+    // SE l'utente preme il bottone precedente
+    // ALLORA all'immagine corrente viene tolta la classe active
+    pics[actualPic].classList.remove("ms_active");
+
+    // SE l'immagine corrente è la prima, immagine corrente diventa l'ultima
+    if (actualPic < 1) {
+        actualPic = imgArray.length - 1;
+        console.log(actualPic)
+    } else {
+        // ALTIRMENTI l'iummagine corrente scala di 1
+        actualPic--;
+    }
+    
+    // OUTPUT
+    // l'immagine successiva viene aggiunta la classe active
+    pics[actualPic].classList.add("ms_active");
+})    
+
+// INPUT
+nextPic.addEventListener("click", function() {
+    console.log("prevPic");
+    // ELABORAZIONE DATI
+    // SE l'utente preme il bottone successivo
+    // ALLORA all'immagine corrente viene tolta la classe active
+    pics[actualPic].classList.remove("ms_active");
+
+    // SE l'immagine corrente è l'ultima, l'immagine corrente diventa la prima
+    if (actualPic >= imgArray.length - 1) {
+        actualPic = 0;
+        console.log(actualPic)
+    } else {
+        // ALTIRMENTI l'iummagine corrente scala di 1
+        actualPic++;
+    }
+    
+    // OUTPUT
+    // l'immagine successiva viene aggiunta la classe active
+    pics[actualPic].classList.add("ms_active");
+})    
 
