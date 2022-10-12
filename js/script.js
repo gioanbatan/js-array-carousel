@@ -20,3 +20,31 @@
 // 2. Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa vogliamo fare
 // 3. Al momento giusto (ihihhi starà a voi capire quale) rispondete a questa domanda: "Quanti cicli servono?"
 // Buon lavoro e buon divertimento! :faccia_leggermente_sorridente:
+
+
+// DATA
+// Array con i nomi file delle immagini jpg
+const imgArray = ["01.jpg","02.jpg","03.jpg","04.jpg","05.jpg"]
+// Costante con il container delle immagini
+const imgFileName = document.getElementById("img-container")
+console.log(imgArray, imgFileName);
+
+// INPUT
+
+// ELABORTAZIONE DATI
+// Ciclo for per la composizione del div con le immagini
+for (let i = 0; i < imgArray.length; i++) {
+    imgArrayPos = imgArray[i];
+    console.log("imgArrayPos", imgArrayPos);
+    // OUTPUT
+    // SE non è la prima immagine creare l'elemento img con il file immagine
+    if (i !== 0) {
+        imgFileName.innerHTML += `<img src="img/${imgArrayPos}">`;
+    } else {
+        //SE è il primo file aggiungere la classe active per renderla visibile
+        imgFileName.innerHTML += `<img class="ms_active" src="img/${imgArrayPos}">`;
+    }
+}
+
+
+

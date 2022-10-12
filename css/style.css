@@ -9,6 +9,11 @@ html {
     font-size: 100%;
 }
 
+/* UTILITIES */
+.ms_active {
+    display: block;
+}
+
 /* COMMON */
 .ms_main-wrapper {
     position: relative;
@@ -32,16 +37,10 @@ html {
     box-shadow: 3px 3px 4px #00000030;
 }
 
-.ms_carousel-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .ms_btn {
     position: absolute;
     left: 50%;
-
+    
     width: 2rem;
     height: 2rem;
 
@@ -50,7 +49,7 @@ html {
     opacity: 0.3;
 
     border-radius: 50%;
-
+    
     cursor: pointer;
 }
 
@@ -70,6 +69,22 @@ html {
 }
 
 /* MAIN */
+img {
+    display: none;
+}
+
+.ms_carousel-container img {
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#img-container {
+    width: 100%;
+    height: 100%;
+}
+
 #prev-pic {
     top: 3rem;
 }
